@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
+	env: {
+		ONLY_IN_DOT_NEXT_CONFIG: 'next.config.js',
+		NEXT_PUBLIC_ONLY_IN_DOT_NEXT_CONFIG: 'next.config.js',
+	},
+	reactStrictMode: true,
+	swcMinify: true,
 }
 
 module.exports = nextConfig
