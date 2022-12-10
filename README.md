@@ -1,3 +1,22 @@
+# Bugreport: Vercel wrong env variables from .env files
+
+This repository is a bugreport for problems with using `.env` files in Vercel deployments.
+
+## Main issues
+
+- edge functions (middleware, experimental-edge runtime) dont have access to env variables from `.env` files (only `NEXT_PUBLIC` prefixed).
+- preview deployments seem to use `.env.production` values instead of `.env.preview`
+
+## Screencast of this repository
+
+- `localhost`: everything works as expected
+- [Vercel `production`](https://bugreport-vercel-missing-env-variables.vercel.app): edge-functions dont have access to secret env variables from .env files
+- [Vercel `preview`](https://bugreport-vercel-missing-env-variables-viliamkopecky.vercel.app): same as production development and also not loading correctly .env.preview (loads values from .env.production)
+
+https://user-images.githubusercontent.com/316435/206859112-234cb11b-7a1a-4ef2-9e49-8185d207f953.mov
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
